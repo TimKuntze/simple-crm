@@ -8,9 +8,15 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
+  it('should display the right title on start', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('simple-crm app is running!');
+    expect(await page.getTitleText()).toEqual('Simple CRM');
+  });
+
+
+  it('should open user page', async () => {
+    await page.navigateToURL('user');
+    expect(await page.getTitleText()).toEqual('Simple CRM');
   });
 
   afterEach(async () => {

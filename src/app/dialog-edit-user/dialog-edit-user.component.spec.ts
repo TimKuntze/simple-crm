@@ -6,16 +6,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
-import { DialogAddUserComponent } from './dialog-add-user.component';
+import { DialogEditUserComponent } from './dialog-edit-user.component';
 
-describe('DialogAddUserComponent', () => {
-  let component: DialogAddUserComponent;
-  let fixture: ComponentFixture<DialogAddUserComponent>;
+describe('DialogEditUserComponent', () => {
+  let component: DialogEditUserComponent;
+  let fixture: ComponentFixture<DialogEditUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatDialogModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule, MatMenuModule, RouterModule.forRoot([])], 
-      declarations: [ DialogAddUserComponent ],
+      imports: [RouterModule.forRoot([]), MatDialogModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule, MatMenuModule], 
+      declarations: [ DialogEditUserComponent ],
       providers: [
         {
           provide: MatDialogRef, 
@@ -27,7 +27,7 @@ describe('DialogAddUserComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogAddUserComponent);
+    fixture = TestBed.createComponent(DialogEditUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

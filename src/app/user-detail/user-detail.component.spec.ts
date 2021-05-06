@@ -1,33 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
-import { UserComponent } from './user.component';
+import { UserDetailComponent } from './user-detail.component';
 
-describe('UserComponent', () => {
-  let component: UserComponent;
-  let fixture: ComponentFixture<UserComponent>;
+describe('UserDetailComponent', () => {
+  let component: UserDetailComponent;
+  let fixture: ComponentFixture<UserDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatDialogModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule, MatMenuModule, RouterModule.forRoot([])], 
-      declarations: [ UserComponent ], 
-      providers: [
-        {
-          provide: MatDialogRef, 
-          useValue: {}
-        }
-      ]
+      imports: [MatDialogModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule, MatMenuModule, RouterModule.forRoot([])],
+      declarations: [ UserDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserComponent);
+    fixture = TestBed.createComponent(UserDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

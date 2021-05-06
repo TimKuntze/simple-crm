@@ -5,7 +5,11 @@ export class AppPage {
     return browser.get(browser.baseUrl);
   }
 
+  navigateToURL (suburl): Promise<unknown> {
+    return browser.get(browser.baseUrl + suburl) as Promise<unknown>; 
+  }
+
   async getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText();
+    return element(by.id('app-title')).getText();
   }
 }
